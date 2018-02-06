@@ -1,0 +1,130 @@
+<div ng-controller="MainCtrl">
+    <div class="hero-bar-sticky">
+        <div class="container">
+            <article class="row">
+                <aside class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+
+                    <p>Call {{contactNumber}} or click, and EMPIRE INC can match you with a villain who is right for your planet.</p>
+                </aside>
+                <aside class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <ul class="red-cta clearfix">
+                        <li>
+                            <button ng-click="findContractorClick('Hero')">HIRE THE EMPIRE TODAY!</button>
+                        </li>
+                    </ul>
+                </aside>
+            </article>
+        </div>
+    </div>
+
+    <div class="full-bleed" pccresize ng-style="getBgImage()">
+      <div class="container">
+        <div class="header-container">
+            <header class="row">
+                <div class="logo-container col-xs-12 col-sm-3 col-md-3 col-md-offset-1">
+                <img src="{{imgBaseUrl}}{{platinumLogo}}" alt="{{heroTitle}}" />
+                </div>
+            </header>
+            <div class="call-box-container col-xs-12 col-sm-8 col-md-4">
+                <div class="call-box">
+                <strong class="tel-clickable"><a ng-click="callUsClick(contactNumber)" href="#">Call {{contactNumber}}</a></strong>
+                <p ng-bind-html="contactContent"></p>
+                <a class="hire" ng-click="findContractorClick('Body')" data-toggle="modal" data-target="#contact-form">HIRE THE EMPIRE TODAY!</a>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="alt-container col-xs-12 col-sm-12 col-md-10 col-md-offset-1">
+                <h2 ng-bind-html="leftContent"></h2>
+                <p ng-bind-html="rightContent"></p>
+            </div>
+        </div>
+        <div class="meet">
+            <div class="row">
+                <div class="col-xs-4 col-xs-offset-4 col-sm-4 col-sm-offset-1 col-md-2 col-md-offset-1">
+                    <img class="meet-logo" src="{{imgBaseUrl}}{{platinumLogo}}" alt="Logo" />
+                </div>
+                <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 col-md-8">
+                    <h3 ng-bind-html="contractorTitle"></h3>
+                    <p ng-bind-html="contractorContent"></p>
+                </div>
+            </div>            
+        </div>
+
+        <div class="row">
+            <div class="profile-items col-xs-10 col-xs-offset-1"> 
+                <div class="row row-centered">
+                    <div class="profile-item col-centered col-xs-6 col-md-4" ng-repeat-start="contractor in featuredContractors">
+                        <!-- <a ng-click="showProfile(this)"> -->
+                        <button data-toggle="modal" data-target="#{{contractor.contractorId}}">
+                            <img class="photo" src="{{imgBaseUrl}}{{contractor.homeImage}}" alt="" />
+                                <span class="tile-name">{{contractor.companyName}}</span>
+                        </button>
+                    </div>
+                    <div id="{{contractor.contractorId}}" class="contractor-modal modal fade" ng-repeat-end>
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                  <img class="profile-logo" src="{{imgBaseUrl}}{{platinumLogo}}" alt="Logo" />
+                                  <h3><strong>EMPIRE INC</strong><br class="visible-xs" /> | {{contractor.companyName}}</h3>
+                                  <a class="close" data-dismiss="modal" aria-hidden="true">X</a>
+                                </div>
+                                <div class="modal-body content">
+                                    <img class="beauty-shot" src="{{imgBaseUrl}}{{contractor.workImage}}">
+                                    <div class="row row-centered">
+                                        <div class="contractor-content basics col-xs-12 col-sm-10 col-sm-offset-1 col-centered">
+                                            <img class="photo" src="{{imgBaseUrl}}{{contractor.bioImage}}" alt="" />
+                                            <div class="contact-info">
+                                                <h4>{{contractor.contractorName}}</h4>             
+                                                <h3>{{contractor.name}}</h3>
+                                                <ul class="red-cta clearfix">
+                                                <li>
+                                                    <button ng-click="ContactContractorClick(contractor.contractorId)">Contact This Villain</button>
+                                                </li>
+                                                </ul>
+                                            </div>
+                                        <h4 ng-if="contractor.phoneNumber" class="cphone">{{contractor.phoneNumber}}</h4>
+                                        </div>
+                                    </div>
+                                  <div class="row row-centered">
+                                    <div class="contractor-content col-xs-12 col-sm-8 col-sm-offset-2 col-centered">
+                                      <div class="contractor-bio" ng-bind-html="contractor.bioContent"></div>
+                                      <ul class="red-cta clearfix">
+                                        <li>
+                                          <button ng-click="ContactContractorClick(contractor.contractorId)">Contact This Villain</button>
+                                        </li>
+                                      </ul>
+                                      <button type="button" class="close end-close" data-dismiss="modal" aria-hidden="true">Close</button>
+
+                                      <p ng-if="footerDisclaimer"><br/><small ng-bind-html="footerDisclaimer"></small></p>
+                                    </div>
+
+                                  </div>
+                                </div>
+                              
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+   </div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-10 col-xs-offset-1 col-sm-5">
+                    <p>Ready to find a villain who is the right fit for your needs? <strong class="tel-clickable"><a ng-click="callUsClick(contactNumber)" href="#"><nobr>Call {{contactNumber}}</nobr></a></strong></p>
+                    <small ng-bind-html="footerDisclaimer"></small>
+                </div>
+                <div class="footer-logo col-xs-10 col-xs-offset-1 col-sm-5">
+                    <small>©EMPIRE INC</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>

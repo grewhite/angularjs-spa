@@ -1,0 +1,109 @@
+<div ng-controller="MainCtrl">
+
+<div class="hero-bar-sticky">
+  <div class="container">
+    <article class="row">
+      <aside class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+        <p></p>
+      </aside>
+    </article>
+  </div>
+</div>
+
+  <div class="small-header">
+    <div class="container">
+      <div class="header-container row">
+        <div class="full-bleeder">
+          <header class="row">
+            <div class="logo-container col-xs-4 col-sm-1 col-md-1 col-md-offset-1 col-xs-offset-1">
+              <a href="/"><img src="{{imgBaseUrl}}{{platinumLogo}}" alt="Empire Inc." /></a>
+            </div>
+          </header>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div  ng-controller="ContactFormCtrl">
+    <div class="profile_overlay contact-form">
+      <form name="pccContactForm" class="profile_modal profile_modal_form" novalidate ng-class="{showValidation: showValidation}" ng-submit="contactSubmit()">
+        <h2>{{selectedContractorHeading}}</h2>
+        <p>{{selectedContractorCopy}}</p>
+        <div class="row">
+          <div class="col-xs-12 col-sm-6">
+            <label for="FirstName">First Name</label>
+            <input type="text" id="FirstName" name="FirstName" value="" class="textbox required" required ng-model="contact.firstname" tabindex="1">
+            <span class="form-validation" ng-show="showValidation && pccContactForm.FirstName.$error.required">Please enter a name.</span>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 details">
+            <label for="LastName">Last Name</label>
+            <input type="text" id="LastName" name="LastName" value="" class="textbox required" required ng-model="contact.lastname" tabindex="2">
+            <span class="form-validation" ng-show="showValidation && pccContactForm.LastName.$error.required">Please enter a name.</span>
+          </div>
+
+          <div class="col-xs-12 col-sm-6">
+            <label for="Email">Email Address</label>
+            <input placeholder="" type="Email" id="email" name="Email" value="" class="textbox required" required ng-model="contact.email" tabindex="3">
+            <span class="form-validation" ng-show="showValidation && pccContactForm.Email.$error.required">Please enter your email address so we can respond to you.</span>
+            <span class="form-validation" ng-show="showValidation && pccContactForm.Email.$error.email">Please enter a valid email address so we can respond to you.</span>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 details">
+            <label for="Phone">Phone Number</label>
+            <input type="tel" id="Phone" name="Phone" class="textbox required" required ng-model="contact.phone" ng-pattern="/^[(]{0,1}[0-9]{3}[)\.\- ]{0,1}[0-9]{3}[\.\- ]{0,1}[0-9]{4}$/" tabindex="4">
+            <span class="form-validation" ng-show="showValidation && pccContactForm.Phone.$error.required">Please enter your area code and phone number so we can quickly respond to you.</span>
+            <span class="form-validation" ng-show="showValidation && pccContactForm.Phone.$error.pattern">Please enter a valid area code and phone number so we can respond to you.</span>
+          </div>
+
+          <div class="col-xs-12 col-sm-6">
+            <label>Tell Us About Your Needs</label>
+            <label class="projectlabel" ng-repeat="option in detailsOptions">
+              <input id="{{option}}" type="checkbox" value="{{option}}" ng-checked="selection.indexOf(option) > -1" ng-click="toggleSelection(option)" tabindex="5" /> {{option}}
+            </label>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 details">
+            <div ng-hide="chosenShow === 0">
+            <label>Selected Contractor</label>
+            <input id="selectedContractor" name="Contractor" class="selected-contractor" type="textbox" disabled="disabled" value="{{chosenContractor}}"/>
+            </div>
+          </div>
+        </div>
+        <ul class="red-cta clearfix">
+          <li>
+            <button type="submit">Send</button>
+          </li>
+        </ul>
+      </form>
+
+      <div class="profile_modal profile_modal_error">
+        <h2>Something's Wrong.</h2>
+        <p>We're sorry, but your form didn't go through.</p>
+        <p>Please <span>try to submit your question again</span>.</p>
+      </div>
+      <div class="profile_modal profile_modal_success">
+        <h2>Thank you for contacting us.</h2>
+        <p>Your villain will be in contact with you shortly.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1 col-sm-5">
+        <p>Ready to find a villain who is the right fit for your project? <strong class="tel-clickable"><a ng-click="callUsClick(contactNumber)" href="#"><nobr>Call {{contactNumber}}</nobr></a></strong></p>
+        <small ng-bind-html="footerDisclaimer"></small>
+      </div>
+      <div class="footer-logo col-xs-10 col-xs-offset-1 col-sm-5">
+        <small>©EMPIRE INC</small>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+</div>

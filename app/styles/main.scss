@@ -1,0 +1,866 @@
+@import 'sass-bootstrap/lib/bootstrap';
+
+/* Variables */
+$spa-red: #a00404;
+$spa-red-trans: rgba(221, 4, 4, 0.4);
+$spa-white-op: rgba(255, 255, 255, .75);
+$spa-font-thin: Arial;
+$spa-font-reg: Arial;
+$spa-font-med: Arial;
+$spa-font-def: Arial;
+$spa-blue: #3e7bdb;
+$custom-phone-size: 767px;
+
+/* Main spa Styles */
+
+/*General*/
+p, ul, li, a {
+  font-family:$spa-font-reg;
+}
+h1 {
+  line-height: 40px;
+  font-size: 30px;
+  text-transform: uppercase;
+  font-family: $spa-font-thin;
+  color: #fff;
+  width: 100%;
+  padding: 10px 10%;
+}
+
+h2 {
+  line-height: 20px;
+  font-size: 24px;
+  text-transform: uppercase;
+  font-family: $spa-font-thin;
+  color: #000;
+}
+h3 {
+  font: 21px/25px $spa-font-def;
+  font-weight: 900;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+h4 {
+  font-family: $spa-font-def;
+  color: #8e8e8e;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 29px;
+  &.cphone {
+    margin: 25px 0 0;
+    font-family: $spa-font-reg;
+    font-size: 14px;
+    color: #000;
+  }
+}
+
+.row-centered {
+    text-align: center;
+}
+
+div.col-centered {
+  display:inline-block;
+  /* reset the text-align */
+  text-align:left;
+  /* inline-block space fix */
+  margin-right:-4px;
+}
+
+ul.red-cta {
+  margin: 25px 0 0 0;
+  padding: 0;
+  list-style-type: none;
+  li {
+    float: left;
+    width: 100%;
+    margin: 25px 0;
+    button {
+      font-size: 17px;
+      font-family: $spa-font-reg;
+      float: left;
+      padding: 17px 25px;
+      background: $spa-red;
+      color: #fff;
+      transition: .5s;
+      border: 0;
+      text-transform: uppercase;
+      text-align: center;
+      width: 100%;
+      &:hover {
+        background: #000;
+        color: #fff;
+        text-decoration: none;  
+        cursor: pointer;    
+      }
+    }
+  }
+}
+
+/* Page header */
+.full-bleed {
+  background: #000 no-repeat top left;
+  background-size: 100%;
+  position: relative;
+}
+.full-bleeder {
+  background: none;
+  background-size: 100%;
+  position: relative;
+}
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+.small-header {
+  height: 100px;
+  background: #000;
+  width: 100%;
+  min-height: 100px;
+  .logo-container {
+    margin-top: 5px;
+    img {
+      width: auto;
+      height: 55px;
+    }
+  }
+  h1 {
+    clear: none;
+    border-left: 1px solid #666;
+    margin-top: 25px;
+    padding: 4px 10px 6px;
+    text-align: left;
+  }
+  h2 {
+    min-height: 24px;
+    width: 100%;
+    float: left;
+    display: block;
+  }
+}
+.logo-container { 
+  padding: 15px; 
+  padding-left: 5px;
+  img { 
+    width: 75%; 
+  }
+} 
+.call-box-container {
+  background: #fff;
+  @media (max-width: $custom-phone-size) {
+   padding-bottom: 25px;
+  }
+  .call-box {
+    background: url(/images/pointing.jpg) no-repeat right #fff;
+    padding: 0;
+    text-align: center;
+    strong {
+      margin: 0;
+      display: block;
+      height: 38px;
+      padding: 12px 60px 0 0;
+    }
+    p {
+      margin: 10px 70px 10px 10px;
+    }
+    a.hire {
+      display: block;
+      width: auto;
+      text-align: center;
+      margin: 25px auto 0;
+      font-size: 20px;
+      background: #a00404;
+      color: #fff;
+      transition: .5s;
+      &:hover {
+        text-decoration: none;
+        background: #000;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.alt-container {
+  background: #ccc;
+  text-align: center;
+}
+
+.alt-container > * {
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.hero-bar-sticky {
+  display: none;
+}
+
+.tel-clickable {
+  a {
+    cursor: text;
+    &:hover {
+      text-decoration: none;
+    }
+    
+  }
+}
+
+footer .tel-clickable a:hover, footer .tel-clickable a:active {
+  color: #fff;
+}
+
+.thanks {
+  margin: 45px 0;
+  text-align: center;
+  .thanks-logo {
+    max-width: 100%;
+  }
+}
+
+.details {
+  margin-bottom: 10px;
+
+  p {
+    margin-bottom: 0;
+  }
+}
+.promo-bar {
+  width: 100%;
+  height: auto;
+  background: #000;
+}
+.promo-container {
+  img {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+  }
+}
+/*PCC Items*/
+.meet {
+  margin-top: 20px;
+  h3 {
+    font-weight: normal;
+  }
+  p {
+    margin-top: 1em;
+  }
+}
+.meet-logo {
+  width: 100%;
+  margin: 0 0 20px;
+}
+.profile-items {
+  margin-top: 20px;
+  .profile-item {
+    min-width: 244px;
+    @media (max-width: $custom-phone-size) {
+      min-width: 100%;
+    }
+    margin: 15px auto;
+    button {
+      display: block;
+      position: relative;
+      border: 0;
+      padding: 0;
+      width: 100%;
+      height: auto;
+    }
+    img {
+      width: 100%;
+    }
+    .photo {
+      border-radius: 5px 5px 0 0;
+    }
+    .logo {
+      border: 1px solid #999;
+      border-top: 0;
+      border-radius: 0 0 5px 5px;
+    }
+    span.profile {
+      position: absolute;
+      top: 66%;
+      left: 50%;
+      margin-left: -28.5%;
+      width: 57%;
+      display: block;
+      text-align: center;
+      text-transform: uppercase;
+      color: #000;
+      font-family: $spa-font-reg;
+      font-size: 14px;
+      background-color: #fff;
+    }
+    span.tile-name {
+      display: block;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      text-align: center;
+      text-transform: uppercase;
+      background: linear-gradient(0deg,rgba(252,252,252,0.8) 0%, rgba(252,252,252,0.5) 100%);
+      font-size: 20px;
+      
+    }
+  }
+}
+/*Profile screen*/
+.row-centered .modal { text-align: left; }
+.beauty-shot {
+  width: 100%;
+  box-shadow: 0px 1px 0px 0px rgba(29, 29, 29, 0.5);
+}
+.contractor-modal {
+  .modal-dialog {
+    padding: 0;
+    overflow: hidden;
+  }
+  .modal-content {
+    border: 0;
+  }
+  .modal-header {
+    background-color: #000;
+    .profile-logo {
+      max-width: 35px;
+      height: auto;
+      float: left;
+    }
+    h3 {
+      color: #fff;
+      float: left;
+      padding: 5px 0 0 15px; 
+      letter-spacing: 0.05em;
+      margin: 0;
+      font: 18px/25px $spa-font-def;
+    }
+    .close {
+      color: #fff;
+      font-size: 30px;
+      height: auto;
+      width: auto;
+      font-family: $spa-font-def;
+      font-weight: 100;
+      position: absolute;
+      right: 17px;
+      top: 12px;
+      margin: 0;
+    }
+  }
+  .modal-body {
+    padding: 0;
+  }
+  .row-centered {
+    padding: 0 15px;
+  }
+  .col-centered {
+    margin-right: 0;
+  }
+}
+.contractor-content {
+  vertical-align: top;
+  &.basics {
+    text-align: center;
+    border-bottom: solid 1px #DDD;
+    margin-bottom: 20px;
+    padding-bottom: 40px;
+    .red-cta {
+      margin-top: 10px;
+    }
+  }
+  .red-cta {
+    text-align: center;
+    li {
+      float: none;
+      display: inline-block;
+      margin: 0;
+      button {
+        box-shadow: 0px 2px 4px 0px rgba(153, 153, 153, 0.25),
+                    0px 1px 0px 0px #000;
+        text-transform: capitalize;
+        float: none;
+        font: 21px/24px $spa-font-def;
+        font-weight: 900;
+        text-align: center;
+        padding: 10px 40px;
+        letter-spacing: 0.05em;
+        &:hover {
+          background: #000;
+          box-shadow: 0px 2px 4px 0px rgba(29, 29, 29, 0.25),
+                      0px 1px 0px 0px #999;
+        }
+      }
+    }
+  }
+  .photo {
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+    border: solid 5px #FFF;
+    box-shadow: 0px 0px 1px 0px rgba(29,29,29,0.15);
+    position: relative;
+    margin-top: -50px;
+  }
+  .logo {
+    display: block;
+    margin: 0 auto 10px auto;
+  }
+  .close.end-close {
+    margin: 20px auto;
+    display: block;
+    text-align: center;
+    float: none;
+    font-size: 16px;
+    font-weight: 300;
+  }
+  .contractor-bio {
+    font-family: $spa-font-def;
+    font-size: 16px;
+    line-height: 24px;
+    p {
+      font-family: $spa-font-def;
+    }
+  }
+  .faq {
+    margin: 10px 0;
+    p {
+      margin: 0;
+    }
+    p.question {
+      font-weight: 900;
+      margin-top: 20px;
+    }
+    p.answer {
+      margin-bottom: 20px;
+    }
+  }
+}
+/*Footer*/
+footer {
+  background: #000;
+  color: #fff;
+  border-top: 3px solid $spa-red;
+  text-align: center;
+  padding: 30px 0 25px;
+  margin-top: 30px;
+  a {
+    color: #fff;
+  }
+  small {
+    font-size: 9px;
+    line-height: 10px;
+  }
+}
+
+/* Modal */
+.modal-dialog {
+  width: 100% !important;
+  max-width: 960px;
+}
+
+.modal-content {
+  border-radius: 0;
+}
+
+.modal-header, .modal-footer {
+  border: none;
+  text-align: left;
+}
+
+div.modal-body {
+  padding: 20px 60px;
+
+  h2 {
+    font: 40px/1em $spa-font-reg;
+  }
+
+  p small {
+    font-size: 10px;
+    text-align: left;
+  }
+}
+
+.modal-header h4 {
+  font-family: $spa-font-thin;
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.close {
+  color: $spa-blue;
+  font-size: 12px;
+  text-shadow: none;
+  opacity: 100;
+  background: none;
+  width: 55px;
+  &:hover {
+    opacity: 100;
+    color: $spa-blue;
+  }
+  span {
+    background: url(../images/close.png) no-repeat top center;
+    height: 14px;
+    width: 14px;
+    display: block;
+    float: right;
+    margin-left: 4px;
+    position: relative;
+    top: -1px;
+  }
+}
+
+/*Overlay - Form*/
+
+.contact-form {
+  min-height: 600px;
+}
+.profile_overlay {
+  h1 sup {
+    font-size: 12px;
+    top: -1.1em;
+  }
+  h2 {
+    padding: 0 0 15px 0;
+    font: 30px/34px $spa-font-reg;
+    color: #000;
+    border-left:none;
+    text-align: left;
+  }
+  p {
+    margin:0;
+    padding: 0 0 15px 0;
+    font: 12px/22px $spa-font-reg;
+    color: #000;
+  }
+  label {
+    display: block;
+    margin: 15px 0 0;
+    padding: 0 0 10px 0;
+    font: 15px/30px $spa-font-reg;
+    color: #000;
+  }
+  .textbox, .customSelect {
+    border: 1px solid #58595b;
+    font: 15px/30px $spa-font-reg;
+    color: #333;
+    margin: 0;
+    padding: 0 3px;
+    width: 100%;
+    height: 33px;
+    text-align: left;
+  }
+  label{
+    &.projectlabel {
+      width: auto;
+      float: left;
+      margin: 0 15px;
+      color: #000;
+      display: block;
+      font: 15px/30px Arial;
+      padding: 0 0 10px;
+    }
+    &.contractorlabel {width: 100%; float: left; margin: 0 15px;}
+    input[type="checkbox"], input[type="radio"] {
+      margin: 4px 10px 0 !important;
+    }
+  }
+  .selected-contractor {
+    border: none;
+    font: 15px/30px $spa-font-reg;
+    color: #333;
+    margin: 0;
+    padding: 0 3px;
+    width: 100%;
+    height: 33px;
+    text-align: left;
+    &:disabled {
+      background: #fff;
+    }
+  }
+  textarea {
+    border: 1px solid #58595b;
+    font: 15px/30px $spa-font-reg;
+    color: #333;
+    margin: 0;
+    padding:3px 3px 4px 3px;
+    width: 100%;
+    height: 200px;
+    text-align: left;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    line-height: normal;
+    &::-webkit-input-placeholder { 
+      line-height: normal; 
+      font-size: 10px; 
+    }
+  }
+  .form-validation {
+    color: #f00;
+    display: block;
+  }
+  .showValidation .ng-invalid {
+    border-color: #f00;
+  }
+  &.submitting {
+    cursor: wait;
+  }
+}
+
+.profile_modal {
+  margin:25px 5.573770491803279%;
+  padding: 0 0 0 0;
+  ul.red-cta li {
+    float: none;
+    button {
+      float: none;
+      margin: 0 auto;
+      &:disabled, &:hover:disabled {
+        cursor: default;
+        background: #ccc;
+        color: #999;
+      }
+    }
+  }
+}
+
+.profile_modal_error, .profile_modal_success {
+  display: none;
+}
+
+@media (min-width: $screen-sm-min) {
+  .contractor-modal {
+    .modal-dialog {
+      padding: 30px 10px;
+    }
+    .modal-content {
+      box-shadow: 0px 0px 2px 2px rgba(66, 66, 66, 0.5)
+    }
+  }
+  .contractor-content {
+    h4 {
+      margin-bottom: 33px;
+    }
+    h4.cphone {
+      margin-bottom: 0;
+    }
+    h3 {
+      font: 36px/38px $spa-font-med;
+      font-weight: 900;
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+    .contractor-bio {
+      font-size: 18px;
+      line-height: 27px;
+      font-family: $spa-font-reg;
+      p {
+        font-family: $spa-font-reg;
+      }
+    }
+    .red-cta li button {
+      font-family: $spa-font-med;
+    }
+    .photo {
+      height: 200px;
+      width: 200px;
+      margin-top: -130px;
+    }
+  }
+
+  .contractor-modal {
+    .modal-header {
+      height: 65px;
+      .pcc-logo {
+        max-width: 145px;
+        position: absolute;
+        top: 85px;
+        z-index: 9;
+      }
+      h3 {
+        top: 20px;
+        left: 20px;
+
+        strong {
+          margin-right: 6px;
+        }
+      }
+      .close {
+        font-size: 44px;
+      }
+    }
+  }
+
+  .row-centered {
+    text-align:left;
+  }
+
+  .col-centered {
+    display:block;
+    float:left;
+    margin-right:0;
+  }
+
+  .header-container {
+    position: relative;
+  }
+
+  .full-bleed {
+    padding-bottom: 38.4%;
+    background-color: transparent;
+  }
+
+  .call-box-container {
+    position: absolute;
+    top: 25px;
+    right: 0;
+    background-color: transparent;
+  }
+
+  .hero-bar-sticky {
+    position: relative;
+    visibility: hidden;
+    display: none !important;
+    top: -50px;
+    z-index: 100;
+  }
+
+  .hero-bar-sticky ul.red-cta {
+    float: none;
+  }
+
+  .hero-bar-sticky p {
+    color: #fff;
+    font-family: $spa-font-reg;
+    position: relative;
+    top: 30px;
+    width: 100%;
+    text-align: right;
+    padding-left: 80px;
+  }
+
+  .sticky {
+    position: fixed;
+    visibility: visible;
+    display: block !important;
+    top: 0;
+    z-index: 1;
+    background: #000;
+    background: -webkit-linear-gradient(#000, #3f3f3f); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#000, #3f3f3f); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#000, #3f3f3f); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#000, #3f3f3f); /* Standard syntax */
+    width: 100%;
+    padding-bottom: 10px;
+  }
+
+  .cert-con {
+    text-align: left;
+  }
+
+  .cert-con-logo {
+    width: 100%;
+  }
+
+  footer {
+    text-align: left;
+    small {
+      font-size: 11px;
+    }
+    .footer-logo {
+      text-align: right;
+    }
+  
+    .footer-logo small {
+      display: block;
+      padding: 24px 0 0;
+    }
+  }
+
+  .modal-header h4 {
+    font-size: 40px;
+    line-height: 40px;
+  }
+
+  ul.red-cta li {
+      width: auto;
+      margin: 0 12px 10px 0;
+      button {
+        width: auto;
+        padding: 8px 15px;
+        font-size: 11px;
+        text-align: left;
+      }
+  }
+
+  .profile_modal ul.red-cta li button {
+    padding: 12px 108px;
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .pcc_overlay textarea::-webkit-input-placeholder {
+    line-height: normal;
+    font-size: 12px;
+  }
+
+}
+
+@media (min-width: $screen-md-min) {
+
+  .call-box-container {
+    padding: 0;
+    right: 8.33333%;
+  }
+
+  .pcc-item {
+    min-width: 0;
+  }
+
+  .pcc-item span {
+    font-size: 10px;
+    padding: 6px 0 4px;
+  }
+
+}
+
+/* Landscape phones and down */
+@media (max-width: $custom-phone-size) {
+  .logo-container {
+    padding-left: 30px;
+  }
+  header {
+    position: relative;
+    .logo-container img {
+      display: block;
+      float: left;
+      width: 35%;
+      height: auto;
+    }
+  }
+  .full-bleeder {
+    height: auto;
+    padding-bottom: 48%;
+  }
+  .contractor-content {
+    img {
+      width: initial;
+    }
+    h3 {
+      text-align: center;
+    }
+  }
+  .modal-content div.modal-body {
+    h2 {
+      font-size: 28px;
+    }
+  }
+}
