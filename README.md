@@ -1,5 +1,6 @@
-#EMPIRE
 ## Project Overview
+
+This is an older AngularJS (1) web application.  This project was built for fun. 
 
 ## Project Set-up
 
